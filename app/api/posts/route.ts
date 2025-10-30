@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -6,9 +7,9 @@ export async function GET() {
   try {
     const r = await fetch(url, { cache: "no-store" });
     if (!r.ok) return new NextResponse(await r.text(), { status: r.status });
-    return NextResponse.json(await r.json());
+    const j = await r.json();
+    return NextResponse.json(j);
   } catch (e) {
     return new NextResponse(String(e), { status: 502 });
   }
 }
-

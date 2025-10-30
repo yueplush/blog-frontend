@@ -1,11 +1,9 @@
-name = "blog-frontend-djj"               # 任意
-compatibility_date = "2025-10-30"        # きょうの日付でOK
+name = "blog-frontend-djj"
+compatibility_date = "2025-10-30"
 compatibility_flags = ["nodejs_compat"]
 
-# Pages + next-on-pages 用の目印（build コマンドはPages側UIでも可）
 [build]
 command = "npx @cloudflare/next-on-pages@1"
 
 [pages]
-# 静的アセットの出力先
 pages_build_output_dir = ".vercel/output/static"
